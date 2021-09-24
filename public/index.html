@@ -1,0 +1,32 @@
+<html lang="pt-BR">
+
+<head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+<h1>Gráfico indice de inflação IPCA</h1>
+<div id="filter">
+    <label for="initialDate">
+        Data de inicio:
+        <select id="initialDate"></select>
+    </label>
+    <label for="finalDate">
+        Data final:
+        <select id="finalDate"></select>
+    </label>
+    <label for="clearFilter">
+        <input id="clearFilter" type="button" alt="limpar filtro" value="Limpar filtro"/>
+    </label>
+</div>
+<div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div>
+
+</body>
+<script src="/javascripts/charts.js" type="module">
+</script>
+</html>
