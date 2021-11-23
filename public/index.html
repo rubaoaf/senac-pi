@@ -2,30 +2,44 @@
 
 <head>
     <title>Express</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Work+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="/stylesheets/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
 
 <body>
-<h1>Gráfico indice de inflação IPCA</h1>
-<div id="filter">
-    <label for="initialDate">
-        Data de inicio:
-        <select id="initialDate"></select>
-    </label>
-    <label for="finalDate">
-        Data final:
-        <select id="finalDate"></select>
-    </label>
-    <label for="clearFilter">
-        <input id="clearFilter" type="button" alt="limpar filtro" value="Limpar filtro"/>
-    </label>
-</div>
-<div>
-    <canvas id="myChart" width="400" height="400"></canvas>
-</div>
-
+    <header>
+        <h1>PI: DESENVOLVIMENTO DE SISTEMAS DINÂMICOS BASEADOS NA WEB</h1>
+    </header>
+    <article>
+        <h2>Histórico do índice IPCA</h2>
+        <div id="filter">
+            <label for="initialDate">
+                Data de inicio:
+                <select id="initialDate"></select>
+            </label>
+            <label for="finalDate">
+                Data final:
+                <select id="finalDate"></select>
+            </label>
+            <label for="clearFilter">
+                <input id="clearFilter" type="button" alt="limpar filtro" value="Limpar filtro"/>
+            </label>
+        </div>
+        <div>
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+    </article>
+    <footer>
+        <p>Rubens Andreazzi Filho - Senac 2021</p>
+    </footer>
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
 </body>
 <script src="/javascripts/charts.js" type="module">
 </script>

@@ -1,9 +1,20 @@
-import { ipcaData } from "./dados-ipca.js";
 import { mapData } from "./mapData.js";
 import { updateOptionsData } from "./updateOptionsData.js";
 import { historyHooks } from "./historyHooks.js";
 
-const mappedData = mapData(ipcaData);
+async function getData() {
+    const response = await fetch('https://api.bcb.gov.br/dados/serie/bcdata.sgs.4448/dados?formato=json');
+    const data = await response.json();
+    if (!response.ok) {
+      throw new Error(response.status);
+    }
+    const loading = document.querySelector('.loading');
+    loading.remove();
+    return data;
+}
+
+
+const mappedData = mapData(await getData());
 let refreshDataChart = [];
 let historyFilter = [];
 let historyLabel = [];
@@ -41,7 +52,7 @@ const refreshMappedData = (posStart, posEnd, reset) => {
 
 const ctx = document.getElementById("myChart").getContext("2d");
 const configChart = {
-  type: "line",
+  type: 'line',
   data: {
     datasets: [
       {
